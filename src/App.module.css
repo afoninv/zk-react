@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	height: 100%;
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.aside {
+	z-index: 1;
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 200px;
+	box-shadow: -1px 1px 5px gray;
+}

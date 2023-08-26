@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.link {
+	text-decoration: underline;
+	cursor: pointer;
+	text-decoration-color: orangered;
+}
+
+.helperText {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	margin-top: 2px;
+	padding: 2px 0;
+	font-size: 11px;
+	line-height: 12px;
+	background-color: white;
+	box-shadow: 0 0 5px gray;
+}

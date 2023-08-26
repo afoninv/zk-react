@@ -1,0 +1,21 @@
+.textInput {
+	display: block;
+	width: calc(100% - 8px);
+}
+
+.dialogButton {
+	display: block;
+	margin-top: 8px;
+	margin-left: auto;
+}
+
+.fileLabel {
+	display: block;
+	width: 100%;
+	cursor: pointer;
+}
+.fileInput {
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}

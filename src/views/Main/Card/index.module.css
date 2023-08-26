@@ -1,0 +1,54 @@
+.container {
+	position: absolute;
+	background-color: white;
+
+	border-radius: 4px;
+	box-shadow: 1px 1px 5px gray;
+}
+
+.titleContainer {
+	position: relative;
+	display: flex;
+	gap: 4px;
+	width: calc(100% - 4px);
+	padding: 2px;
+	border-bottom: 1px solid lightgray;
+}
+
+.titleCommon {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 1px;
+}
+
+.title {
+	composes: titleCommon;
+	padding-left: 8px;
+	overflow: hidden;
+	white-space: pre;
+	text-overflow: ellipsis;
+	cursor: move;
+}
+
+.editableTitle {
+	composes: titleCommon;
+	display: flex;
+	flex-direction: column;
+	min-width: 1px;
+}
+
+.helperText {
+	position: absolute;
+	top: 100%;
+	z-index: 1;
+	width: calc(100% - 2px);
+	padding: 2px 0;
+	font-size: 11px;
+	line-height: 12px;
+	background-color: white;
+	box-shadow: 0 0 5px black;
+}
+
+.gearIcon {
+	font-size: 18px;
+}

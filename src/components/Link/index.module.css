@@ -1,0 +1,12 @@
+.link {
+	text-decoration: underline;
+	cursor: pointer;
+	pointer-events: auto;
+	text-decoration-color: orangered;
+}
+
+.emptyLink {
+	composes: link;
+	text-decoration-color: gray;
+	text-decoration-style: dashed;
+}

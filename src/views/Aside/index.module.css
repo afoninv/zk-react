@@ -1,0 +1,41 @@
+.aside {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 8px;
+}
+
+.topButtons {
+	position: relative; /* For input's helper text */
+	display: flex;
+	gap: 8px;
+	padding-top: 8px;
+}
+
+.topButtons > *:last-child {
+	flex-shrink: 0;
+	align-self: baseline;
+}
+
+.hr {
+	width: 100%;
+}
+
+.aside details {
+	margin-bottom: 16px;
+}
+
+.detailsContent {
+	margin-left: 24px;
+}
+
+.noContent {
+	margin-left: 24px;
+	color: darkgray;
+	font-size: 14px;
+}
+
+.flexReverse {
+	display: flex;
+	flex-direction: column-reverse;
+}

@@ -1,0 +1,17 @@
+.popoverContainer {
+	z-index: 1000000000;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 4px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 1px 1px 5px gray;
+}
+
+.menu button {
+	text-align: left;
+}

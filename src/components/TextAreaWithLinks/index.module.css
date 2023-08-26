@@ -1,0 +1,31 @@
+.container {
+	position: relative;
+}
+
+.box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 8px);
+	margin: 0;
+	padding: 4px;
+	font-size: 13px;
+	line-height: 16px;
+	white-space: pre-wrap;
+
+	overflow-wrap: anywhere;
+}
+
+.textArea {
+	font-family: unset;
+	border: none;
+	resize: none;
+}
+.textArea:focus-visible {
+	outline-style: solid;
+}
+
+.linkArea {
+	color: transparent;
+	pointer-events: none;
+}
