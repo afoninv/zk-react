@@ -74,7 +74,6 @@ function MenuContent(props: MenuContentProps) {
 			props.setOpen(false);
 			return;
 		}
-		
 
 		const agree = window.confirm('Loading will overwrite your current work. Continue?');
 		if (!agree) {

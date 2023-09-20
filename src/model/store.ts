@@ -1,5 +1,4 @@
 import { createStore } from 'effector';
-import safelyLoadStore from './safelyLoadStore';
 import { CARD_WIDTH, CARD_HEIGHT, CARD_ID_PREFIX } from './consts';
 import {
 	createCard,
@@ -13,6 +12,7 @@ import {
 	deleteCard,
 	importStore,
 } from './events';
+import safelyLoadStore from './safelyLoadStore';
 
 type Card = {
 	id: string;
@@ -32,12 +32,13 @@ type Store = {
 	closedCards: Card['id'][];
 };
 
-
 let storeInLS: Store;
 
 const loadedStore = safelyLoadStore(localStorage.getItem('zk-react/v1'));
 if (loadedStore === null) {
-	console.warn('localStorage is empty or has corrupted data; initializing with default empty state');
+	console.warn(
+		'localStorage is empty or has corrupted data; initializing with default empty state'
+	);
 
 	storeInLS = {
 		cards: {},
