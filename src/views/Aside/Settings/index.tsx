@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useRef } from 'react';
 import Menu, { MenuContentProps } from 'components/Menu';
 import { importStore } from 'model/events';
+import safelyLoadStore from 'model/safelyLoadStore';
 import { _fullStore } from 'model/store';
 import styles from './index.module.css';
 
@@ -35,12 +36,19 @@ function MenuContent(props: MenuContentProps) {
 		const reader = new FileReader();
 
 		reader.onload = () => {
-			const content = reader.result as string;
-			// TODO check if format is right
-			const store = JSON.parse(content);
+			const store = safelyLoadStore(reader.result);
+
+			if (store === null) {
+				alert('Failed to load: file is empty or has corrupted data');
+				props.setOpen(false);
+				return;
+			}
 
 			const agree = window.confirm('Loading will overwrite your current work. Continue?');
-			if (!agree) return;
+			if (!agree) {
+				props.setOpen(false);
+				return;
+			}
 
 			importStore(store);
 			// TODO snackbar
@@ -59,12 +67,19 @@ function MenuContent(props: MenuContentProps) {
 	function onTextLoad(event: FormEvent<HTMLFormElement>) {
 		const target = event.target as HTMLFormElement;
 
-		const content = new FormData(target).get('import');
-		// TODO check if format is right
-		const store = JSON.parse(content);
+		const store = safelyLoadStore(new FormData(target).get('import'));
+
+		if (store === null) {
+			alert('Failed to load: input is empty or has corrupted data');
+			props.setOpen(false);
+			return;
+		}
 
 		const agree = window.confirm('Loading will overwrite your current work. Continue?');
-		if (!agree) return;
+		if (!agree) {
+			props.setOpen(false);
+			return;
+		}
 
 		importStore(store);
 		// TODO snackbar

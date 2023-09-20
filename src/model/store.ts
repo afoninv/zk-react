@@ -12,6 +12,7 @@ import {
 	deleteCard,
 	importStore,
 } from './events';
+import safelyLoadStore from './safelyLoadStore';
 
 type Card = {
 	id: string;
@@ -31,15 +32,24 @@ type Store = {
 	closedCards: Card['id'][];
 };
 
-let storeInLS = window.localStorage.getItem('zk-react/v1')
-	? JSON.parse(localStorage.getItem('zk-react/v1'))
-	: {
-			cards: {},
-			cardPositions: {},
-			cardOrder: {},
-			openedCards: [],
-			closedCards: [],
-	  };
+let storeInLS: Store;
+
+const loadedStore = safelyLoadStore(localStorage.getItem('zk-react/v1'));
+if (loadedStore === null) {
+	console.warn(
+		'localStorage is empty or has corrupted data; initializing with default empty state'
+	);
+
+	storeInLS = {
+		cards: {},
+		cardPositions: {},
+		cardOrder: {},
+		openedCards: [],
+		closedCards: [],
+	};
+} else {
+	storeInLS = loadedStore;
+}
 
 const store = createStore<Store>(storeInLS);
 

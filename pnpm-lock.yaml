@@ -11,8 +11,8 @@ dependencies:
     specifier: ^22.5.3
     version: 22.5.3(effector@22.8.6)(react@18.2.0)
   framerate-react:
-    specifier: ^1.0.0
-    version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.1.0
+    version: 1.1.0(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2458,8 +2458,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framerate-react@1.0.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/N5Pi1IGq0zMrq2Y5NPhSGk8XipjcUST51AZs+70IiiPEEsAPOI/YBmFKPkRBh1tLGR/nRcQPzkZ1r1fUcuDEA==}
+  /framerate-react@1.1.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CsY7cwembvPeg3q+TCGHXCEtmhkCI493c8SzBBVfWactF/KkPjZbFB+s+TLq9wwPtXWscPNh9CkOcGEumMUKhQ==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
